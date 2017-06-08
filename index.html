@@ -10,17 +10,54 @@
 </head>
 
 <body>
+  <!--Main section-->
   <main class="main">
     <div class="container">
       <div class="row">
-        <article class="widget">
-          <div class="prev col-xs-1"></div>
-          <div class="col-xs-6"></div>
-          <div class="next col-xs-1"></div>
-        </article>
+        <!--Weather widget-->
+        <section class="widget">
+          <!--Left arrow-->
+          <div class="prev col-xs-1"><span class="glyphicon glyphicon-arrow-left"></span></div>
+          <!--Widget-->
+          <atricle class="col-xs-6">
+            <h2 class="weather"></h2>
+            <!--Big icon-->
+            <fieldset class="weather-icon">
+              <img src="" class="icon">
+              <caption class="weather-description"></caption>
+            </fieldset>
+            <div class="info">
+              <div class="main-info">
+                <!--City and date-->
+                <div class="location">
+                  <div class="city"></div>
+                  <div class="date"></div>
+                </div>
+                <!--Arrows for morning afternoon night-->
+                <div class="arrows">
+                  <div class="prev-time"></div>
+                  <div class="next-time"></div>
+                </div>
+                <div class="hourly-weather">
+                  <img src="" class="icon">
+                  <div class="temperature"></div>
+                </div>
+              </div>
+              <div class="data">
+                <div class="temperature"></div>
+                <div class="humidity"></div>
+                <div class="wind-speed"></div>
+                <div class="cloud-cover"></div>
+              </div>
+            </div>
+          </atricle>
+          <!--Right arrow-->
+          <div class="next col-xs-1"><span class="glyphicon glyphicon-arrow-right"></span></div>
+        </section>
       </div>
     </div>
   </main>
+  <!--End main section->
 </body>
 
 </html>
