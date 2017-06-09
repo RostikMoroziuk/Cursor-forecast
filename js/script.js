@@ -10,7 +10,7 @@
   var location;
   //load weather
   function init() {
-    navigator.geolocation.getCurrentPosition(getCurrentLocation);
+    navigator.geolocation.getCurrentPosition(getCurrentLocation, getDefaultLocation);
     $(".arrows .prev-time").click(prevTime);
     $(".arrows .next-time").click(nextTime);
 
@@ -86,6 +86,17 @@
       longitude: pos.coords.longitude
     }
     getCity();
+  }
+
+  function getDefaultLocation(pos) {
+    console.log("default");
+    //default is kyiv
+    location = {
+      latitude: 50.439761, 
+      longitude: 30.528537,
+      city: "Kyiv"
+    }
+    makeWeatherRequest(new Date);
   }
 
   function makeWeatherRequest(day) {
