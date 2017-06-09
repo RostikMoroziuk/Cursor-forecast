@@ -21,8 +21,8 @@
     var currentTimeInSecond = getDate();
     console.log(currentTimeInSecond);
     var jsonp = $("<script></script>").attr("src", "https://api.darksky.net/forecast/"
-    + DARKSKY_KEY + "/" + location.latitude + "," + location.longitude + currentTimeInSecond + 
-    "?units=auto&exclude=minutely,alerts,flags,daily" + "&callback=renderWidget");
+    + DARKSKY_KEY + "/" + location.latitude + "," + location.longitude + "," + currentTimeInSecond + 
+    "?units=auto&exclude=minutely,alerts,flags,daily,currently" + "&callback=renderWidget").attr("data-request", "data-request");
     $("body").append(jsonp);
   }
 
@@ -30,10 +30,10 @@
   function getDate(day) {
     if(day) {
       //return time in second
-      return new Date(day).getTime()/1000;
+      return (new Date(day).getTime()/1000);
     }
 
-    return Date.now();
+    return parseInt(Date.now()/1000);
   }
 
   function getFormatedDate(date) {
@@ -41,20 +41,39 @@
   }
 
   function renderWidget(weather) {
-    console.log(weather);
-    var currently = weather.currently;
-    var hourly = weather.hourly;
+    var NIGHT = 3,
+    MORNING = 9,
+    AFTERNONN = 15,
+    EVENING = 21;
 
-    var currentDate = new Date(currently.time*1000);
+    var hourly = weather.hourly.data;
+    var summary = weather.hourly.summary;
+
+    var date = new Date();
+
+    var currently, currentlyPartOfDay; //current part of day
+    if(date.getHours() < 6) {
+      currently = hourly[NIGHT];
+      currentlyPartOfDay = "night";
+    } else if(date.getHours() < 12) {
+      currently = hourly[MORNING];
+      currentlyPartOfDay = "morning"
+    } else if(date.getHours() < 18) {
+      currently = hourly[AFTERNONN];
+      currentlyPartOfDay = "afternoon"
+    } else {
+      currently = hourly[EVENING];
+      currentlyPartOfDay = "evening"
+    }
 
     //set header for current weather
     $("h2.weather").text(currently.summary);
 
     $(".weather-icon .icon").attr("src", "img/" + currently.icon + ".svg");
-    $(".weather-description").text(hourly.summary);
+    $(".weather-description").text(summary);
 
     $(".city").text(location.city);
-    $(".date").text(getFormatedDate(currentDate));
+    $(".date").text(getFormatedDate(date) + " " + currentlyPartOfDay);
 
     $(".hourly-weather .icon").attr("src", "img/temperature.svg");
     $(".hourly-weather .temperature").text(currently.temperature);

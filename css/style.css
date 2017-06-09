@@ -35,10 +35,6 @@ body {
 .prev-time,
 .next-time {
   cursor: pointer;
-}
-
-.next,
-.prev {
   padding: 10px;
 }
 
@@ -67,6 +63,8 @@ body {
 
 .main-info {
   border-bottom: 1px solid black;
+  display: flex;
+  align-items: stretch;
 }
 
 .main-info .location,
@@ -82,6 +80,10 @@ body {
 
 .arrows {
   width: 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .data {
