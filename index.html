@@ -21,43 +21,47 @@
       <atricle class="weather-widget">
         <h2 class="weather"></h2>
         <!--Big icon-->
-        <fieldset class="weather-icon">
+        <fieldset class="weather-icon text-center">
           <img src="" class="icon">
-          <caption class="weather-description"></caption>
+          <div class="weather-description"></div>
         </fieldset>
         <div class="info">
-          <div class="main-info row container-fluid">
-            <!--City and date-->
-            <div class="location col-xs-6">
-              <div class="city"></div>
-              <div class="date"></div>
-            </div>
-            <!--Arrows for morning afternoon night-->
-            <div class="arrows col-xs-1">
-              <div class="prev-time"><span class="glyphicon glyphicon-arrow-up"></span></div>
-              <div class="next-time"><span class="glyphicon glyphicon-arrow-down"></span></div>
-            </div>
-            <div class="hourly-weather col-xs-5">
-              <img src="" class="icon">
-              <div class="temperature"></div>
+          <div class="container-fluid">
+            <div class="main-info row">
+              <!--City and date-->
+              <div class="location col-xs-6">
+                <div class="city"></div>
+                <div class="date"></div>
+              </div>
+              <!--Arrows for morning afternoon night-->
+              <div class="arrows col-xs-1">
+                <div class="prev-time"><span class="glyphicon glyphicon-arrow-up"></span></div>
+                <div class="next-time"><span class="glyphicon glyphicon-arrow-down"></span></div>
+              </div>
+              <div class="hourly-weather col-xs-4">
+                <img src="" class="icon">
+                <div class="temperature value"></div>
+              </div>
             </div>
           </div>
-          <div class="data row">
-            <div class="temperature col-xs-3">
-              <img src="img/temperature.svg" class="icon">
-              <span class="value"></span>
-            </div>
-            <div class="humidity col-xs-3">
-              <img src="img/humidity.svg" class="icon">
-              <span class="value"></span>
-            </div>
-            <div class="wind-speed col-xs-3">
-              <img src="img/windSpeed.svg" class="icon">
-              <span class="value"></span>
-            </div>
-            <div class="cloud-cover col-xs-3">
-              <img src="img/cloudCover.svg" class="icon">
-              <span class="value"></span>
+          <div class="container-fluid">
+            <div class="data row">
+              <div class="temperature col-xs-3 text-center">
+                <img src="img/temperature.svg" class="icon">
+                <span class="value"></span>
+              </div>
+              <div class="humidity col-xs-3 text-center">
+                <img src="img/humidity.svg" class="icon">
+                <span class="value"></span>
+              </div>
+              <div class="wind-speed col-xs-3 text-center">
+                <img src="img/windSpeed.svg" class="icon">
+                <span class="value"></span>
+              </div>
+              <div class="cloud-cover col-xs-3 text-center">
+                <img src="img/cloudCover.svg" class="icon">
+                <span class="value"></span>
+              </div>
             </div>
           </div>
         </div>

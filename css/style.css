@@ -1,3 +1,4 @@
+@import url("novecento-wide.css");
 body {
   background: url("../img/Layer.png") 0 0/100% 100% no-repeat;
   width: 100%;
@@ -10,6 +11,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Novecento Sans Wide", sans-serif;
+  color: #d8e6f3;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .widget {
@@ -18,17 +23,84 @@ body {
 }
 
 .weather-widget {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
   width: 280px;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.next,
+.prev,
+.prev-time,
+.next-time {
+  cursor: pointer;
+}
+
+.next,
+.prev {
+  padding: 10px;
+}
+
+.weather-widget .weather {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.weather-icon {
+  border-bottom: 1px solid black;
+  padding: 10px;
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 
 .weather-icon .icon {
   width: 100px;
   height: 100px;
+  margin-bottom: 10px;
+}
+
+.main-info {
+  border-bottom: 1px solid black;
+}
+
+.main-info .location,
+.main-info .arrows {
+  border-right: 1px solid black;
+}
+
+.main-info .location,
+.main-info .arrows,
+.hourly-weather {
+  padding: 10px;
+}
+
+.arrows {
+  width: 33px;
+}
+
+.data {
+  padding: 10px;
+}
+
+.value {
+  font-size: 17px;
+}
+
+.main-info .temperature {
+  margin-left: 5px;
+}
+
+.data .icon {
+  margin-bottom: 5px;
+}
+
+.hourly-weather {
+  display: flex;
+  align-items: center;
 }

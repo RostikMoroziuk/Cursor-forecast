@@ -86,8 +86,8 @@
       //array of locality types
       return _.indexOf(a.types, "locality") !== -1;
     })
-
-    location.city = city.types["locality"] || "UNKNOWN";
+    console.log(city);
+    location.city = city.long_name || "UNKNOWN";
   }
 
   //callback for darksky

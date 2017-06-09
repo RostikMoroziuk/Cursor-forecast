@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Novecento Sans Wide';
+  src: url('../font/DemiBold/Novecentosanswide-DemiBold-webfont.eot');
+  src: url('../font/DemiBold/Novecentosanswide-DemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('../font/DemiBold/Novecentosanswide-DemiBold-webfont.woff2') format('woff2'), url('../font/DemiBold/Novecentosanswide-DemiBold-webfont.woff') format('woff'), url('../font/DemiBold/Novecentosanswide-DemiBold-webfont.ttf') format('truetype'), url('../font/DemiBold/Novecentosanswide-DemiBold-webfont.svg#novecento_sans_wide_bookbold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
