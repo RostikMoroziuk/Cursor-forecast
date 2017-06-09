@@ -17,6 +17,12 @@ body {
   font-weight: 600;
 }
 
+.disabled,
+.disabled:hover {
+  color: #607D8B !important;
+  cursor: default !important;
+}
+
 .widget {
   display: flex;
   align-items: center;
@@ -36,6 +42,13 @@ body {
 .next-time {
   cursor: pointer;
   padding: 10px;
+}
+
+.next:hover,
+.prev:hover,
+.prev-time:hover,
+.next-time:hover {
+  color: #00BCD4
 }
 
 .weather-widget .weather {
@@ -65,6 +78,10 @@ body {
   border-bottom: 1px solid black;
   display: flex;
   align-items: stretch;
+}
+
+.part-of-date {
+  font-size: 12px;
 }
 
 .main-info .location,
