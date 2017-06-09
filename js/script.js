@@ -113,7 +113,7 @@
     var summary = weather.hourly.summary;
 
     var date;
-    if(forecast.date) {
+    if (forecast.date) {
       date = forecast.date;
     } else {
       date = new Date();
@@ -141,7 +141,6 @@
     forecast.date = date;
 
     //set header for current weather
-    $("h2.weather").text(currently.summary);
     $(".weather-description").text(summary);
     setData(currently, currentlyPartOfDay, date);
   }
@@ -149,6 +148,7 @@
   function setData(currently, currentlyPartOfDay, date) {
     date = date;
 
+    $("h2.weather").text(currently.summary);
     $(".weather-icon .icon").attr("src", "img/" + currently.icon + ".svg");
 
     $(".city").text(location.city);
