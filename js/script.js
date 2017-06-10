@@ -92,7 +92,7 @@
     console.log("default");
     //default is kyiv
     location = {
-      latitude: 50.439761, 
+      latitude: 50.439761,
       longitude: 30.528537,
       city: "Kyiv"
     }
@@ -196,7 +196,11 @@
       return _.indexOf(a.types, "locality") !== -1;
     })
     console.log(city);
-    location.city = city.long_name || "UNKNOWN";
+    if (!city) {
+      location.city = "UNKNOWN";
+    } else {
+      location.city = city.long_name
+    }
   }
 
   //callback for darksky
