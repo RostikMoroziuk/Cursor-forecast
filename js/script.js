@@ -14,6 +14,14 @@
     $(".arrows .prev-time").click(prevTime);
     $(".arrows .next-time").click(nextTime);
 
+    //events for mobile
+    $("body").swiperight = function() {
+      console.log("swipe");
+    }//prevDate
+    $(".weather-widget").on("swipeleft", function() {
+      console.log("swipe");
+    });//nextDate
+
     $(".prev").click(prevDate);
     $(".next").click(nextDate);
   }
@@ -195,11 +203,12 @@
       //array of locality types
       return _.indexOf(a.types, "locality") !== -1;
     })
-    console.log(city);
-    if (!city) {
-      location.city = "UNKNOWN";
-    } else {
+    if(city) {
       location.city = city.long_name
+    } else if (!city && geocode.results[0].formatted_address) {
+      location.city = geocode.results[0].formatted_address;
+    } else {
+      location.city = "UNKNOWN";
     }
   }
 
