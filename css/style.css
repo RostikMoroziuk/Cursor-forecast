@@ -4,7 +4,7 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  
+  min-width: 310px;
 }
 
 .main {
@@ -123,4 +123,22 @@ body {
 .hourly-weather {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 400px) {
+  .widget {
+    position: relative;
+  }
+
+  .prev {
+    position: absolute;
+    left: 50px;
+    bottom: -50px;
+  }
+
+  .next {
+    position: absolute;
+    right: 50px;
+    bottom: -50px;
+  }
 }
